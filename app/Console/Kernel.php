@@ -24,6 +24,18 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command("backup:clean")->daily()->at('01:00');
+
+        /**
+         * php artisan backup:run --only-to-disk=
+         * php artisan backup:run --only-db     ／／只备份数据库
+         * php artisan backup:run --only-files  //只备份文件
+         */
+        $schedule->command("backup:run")->daily()->at('2:00');
+        $schedule->command("backup:monitor")->daily()->at('2:30');
+
+
+
         // $schedule->command('inspire')
         //          ->hourly();
     }

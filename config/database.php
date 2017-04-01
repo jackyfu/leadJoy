@@ -51,6 +51,18 @@ return [
             'prefix' => 'lead_',
             'strict' => true,
             'engine' => null,
+
+
+            //for db backup
+            'dump' => [
+                //'dump_binary_path'      => '/usr/local/bin', //'/opt/backups/mysql/',
+
+                'use_single_transaction',
+                'time_out'              => 15 * 60, //15 minutes
+                'excludes_tables'       => [], //['table1','table2']
+                //'add_extra_option'      => '', //--optionName=optionValue
+
+            ],
         ],
 
         'pgsql' => [

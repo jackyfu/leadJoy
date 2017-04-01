@@ -1,0 +1,320 @@
+body {
+    font-family: "微软雅黑";
+
+    background-color: #ff524c;
+}
+.lottery {
+    width: 100%;
+    padding-top: 3.52rem;
+
+    background: url(../images/bg.png) no-repeat;
+    background-size: 100%;
+}
+.jihui {
+    overflow: hidden;
+
+    font-size: .22rem;
+
+    text-align: center;
+
+    color: #fff;
+}
+.jihui span {
+    color: #ffec02;
+}
+.choujiang {
+    position: relative;
+
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: .27rem;
+}
+.choujiang img {
+    z-index: 3;
+
+    display: block;
+    width: 100%;
+}
+.shadow {
+    position: absolute;
+    bottom: .15rem;
+    z-index: 1;
+
+    width: 4.62rem;
+    height: .34rem;
+    margin: 0 auto;
+}
+#lijichou img {
+    position: absolute;
+    top: 24.6%;
+    left: 25%;
+    z-index: 1;
+
+    width: 50%;
+}
+#plateBtn {
+    position: absolute;
+    top: 26.65%;
+    left: 27%;
+    z-index: 99;
+
+    width: 46%;
+    height: 46%;
+
+    outline-style: none;
+    background: url(../images/jiantou.png) no-repeat;
+    background-size: 100%;
+}
+.sharebtn {
+    display: inline-block;
+    width: 3.36rem;
+    height: .79rem;
+    margin: .74rem .18rem 0 27%;
+
+    font-size: .34rem;
+    font-weight: bold;
+    line-height: .74rem;
+
+    text-align: center;
+
+    color: #ae5b11;
+    background: url(../images/fxbtn.png) no-repeat;
+    background-size: 3.36rem .79rem;;
+    /* background-color: #ffdf1c;
+    border-radius: 0.12rem;*/
+}
+.myprize {
+    display: inline-block;
+
+    font-size: .25rem;
+
+    text-decoration: underline;
+
+    color: #ffde1c;
+}
+.zhiyin {
+    width: .46rem;
+    height: .28rem;
+    margin: 0 auto;
+    margin-top: .26rem;
+}
+.prize-list {
+    position: relative;
+
+    width: 70%;
+    padding: 1.01rem 0 .24rem .67rem;
+    margin-top: .35rem;
+    margin-left: 10%;
+
+    font-size: .28rem;
+    line-height: .48rem;
+
+    border: .02rem dashed #ffc031;
+    background-color: #ff6b63;
+}
+.maquee {
+    height: 1.5rem;
+    overflow: hidden;
+}
+.prize-info {
+    overflow: hidden;
+}
+.prize-list .prize-info span {
+    color: #fff700;
+}
+.prize-list ul {
+    color: #fff;
+}
+.prize-list span {
+    display: inline-block;
+    width: 49%;
+}
+.prize-title {
+    position: absolute;
+    top: 8%;
+    left: -8%;
+
+    width: 2.09rem;
+    height: .6rem;
+
+    font-size: .28rem;
+    font-weight: bold;
+    line-height: .6rem;
+
+    text-align: center;
+
+    color: #ae5b11;
+    background: url(../images/guzbg.png);
+    background-size: 100% 100%;
+}
+.prize-rule {
+    position: relative;
+
+    width: 73%;
+    padding: 1.08rem 0 .34rem .44rem;
+    margin-top: .2rem;
+    margin-left: 10%;
+
+    font-size: .25rem;
+    line-height: .34rem;
+
+    color: #fff;
+    border: .02rem dashed #ffc031;
+    background-color: #ff6b63;
+}
+.rule-title {
+    top: 4%;
+}
+/*弹框样式*/
+.dialogbg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+
+    display: none;
+
+    opacity: .6;
+    background: #000;
+    background: rgba(0,0,0,.6);
+
+    filter: alpha(opacity=60);
+}
+.prize-diologimg {
+    position: fixed;
+    top: 2rem;
+    left: 8%;
+    z-index: 10000;
+
+    display: none;
+    width: 6.32rem;
+    height: 6.81rem;
+    margin: 0 auto;
+
+    background: url(../images/diologbg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.prize-diologimg h2 {
+    margin-top: .5rem;
+
+    font-size: .68rem;
+    font-weight: bold;
+
+    text-align: center;
+
+    color: #fff;
+}
+.prize-diologimg span {
+    display: block;
+    width: 2.98rem;
+    height: 2.98rem;
+    margin: 0 auto;
+    margin-top: .5rem;
+
+    font-size: .37rem;
+    font-weight: bold;
+    line-height: 2.98rem;
+
+    text-align: center;
+
+    color: #ae5b11;
+    border-radius: 100%;
+    background-color: #fde503 ;
+}
+.prize-diologimg p {
+    margin: .2rem 0;
+
+    font-size: .26rem;
+
+    text-align: center;
+
+    color: #fff;
+}
+.prize-diologimg p.fxtxt {
+    margin: .8rem 0 .27rem 0;
+}
+.prize-diologimg a.btn {
+    display: block;
+    width: 3.36rem;
+    height: .79rem;
+    margin: 0 auto;
+
+    font-size: .32rem;
+    line-height: .79rem;
+
+    text-align: center;
+
+    color: #ae5b11;
+    background: url(../images/fxbtn.png) no-repeat ;
+    background-size: 100% 100%;
+}
+.prize-diologimg .shareimg {
+    margin: .87rem 0 .82rem 0;
+
+    text-align: center;
+}
+.prize-diologimg .shareimg img {
+    display: inline-block;
+    width: 1.56rem;
+    height: 1.56rem;
+
+    border-radius: 100%;
+    background-size: 100% 100%;
+}
+.prize-diologimg #wechat {
+    margin-left: .6rem;
+}
+.getprize-diolog {
+    position: fixed;
+    top: 3.72rem;
+    z-index: 10000;
+
+    display: none;
+    width: 6.31rem;
+    height: 3.14rem;
+    padding-top: .35rem;
+    margin-left: 8%;
+
+    border-radius: .16rem;
+    background-color: #ff423a;
+}
+.getprize-diolog p {
+    font-size: .3rem;
+
+    text-align: center;
+
+    color: #fff;
+}
+.getprize-diolog input {
+    width: 5.41rem;
+    height: .8rem;
+    padding-left: .29rem;
+    margin: .3rem 0 .4rem 0;
+    margin-left: 5%;
+
+    background-color: #fff;
+}
+.getprize-diolog .paybtn {
+    text-align: center;
+}
+.paybtn .btn {
+    display: inline-block;
+    width: 2.48rem;
+    height: .83rem;
+
+    font-size: .32rem;
+    line-height: .83rem;
+
+    text-align: center;
+
+    color: #ae5b11;
+    background: url(../images/diologbtn.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.paybtn #abandon {
+    margin-left: .8rem;
+}

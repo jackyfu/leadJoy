@@ -1,0 +1,115 @@
+body {
+    background-color: #f6f6f6;
+}
+.getprizeinfo {
+    margin: .2rem 0;
+    margin-left: 70%;
+}
+.getprizeinfo em {
+    display: inline-block;
+    width: .28rem;
+    height: .28rem;
+
+    font-size: .2rem;
+    line-height: .28rem;
+
+    text-align: center;
+
+    color: #fff;
+    border-radius: 100%;
+    background-color: #c6c6c6;
+}
+.getprizeinfo span {
+    display: inline-block;
+    margin-left: .1rem;
+
+    font-size: .26rem;
+
+    color: #a7a7a7;
+}
+.myprizelist {
+    position: relative;
+
+    width: 6.91rem;
+    height: 1.48rem;
+    margin: 0 auto;
+
+    background: url(../images/prizebg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.myprizelist h2 {
+    position: absolute;
+    top: .36rem;
+    left: 2.2rem;
+
+    font-size: .32rem;
+
+    color: #2f2f2f;
+}
+.myprizelist p {
+    position: absolute;
+    top: .85rem;
+    left: 2.2rem;
+
+    font-size: .26rem;
+
+    color: #868686;
+}
+.diologprizeinfo {
+    position: fixed;
+    top: 2rem;
+    left: 8%;
+    z-index: 10000;
+
+    display: none;
+    width: 6.32rem;
+    height: 6.81rem;
+    margin: 0 auto;
+
+    background: url(../images/diologbg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.diologprizeinfo .close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+
+    width: .58rem;
+    height: .58rem;
+
+    background-size: 100% 100%;
+}
+.diologprizeinfo h3 {
+    margin-top: .65rem;
+    margin-bottom: .41rem;
+
+    font-size: .46rem;
+
+    text-align: center;
+
+    color: #fff;
+}
+.diologprizeinfo p {
+    margin-left: 5%;
+
+    font-size: .28rem;
+    line-height: .41rem;
+
+    color: #fff;
+}
+.dialogbg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+
+    display: none;
+
+    opacity: .6;
+    background: #000;
+    background: rgba(0,0,0,.6);
+
+    filter: alpha(opacity=60);
+}

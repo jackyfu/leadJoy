@@ -50,4 +50,20 @@ class SignupController extends Controller
 
         return view('signup.login');//'Login';
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    public function postLogin(Request $request){
+        //user 表里面添加 api_token
+        if(\Auth::once($this->getCredentials($request))){
+            \Auth::user()->api_token = Str::random(60);
+            \Auth::user()->save();
+
+            return \Auth::user();
+        }else{
+            return response('Unauthorized.', 401);
+        }
+    }
 }

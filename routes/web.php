@@ -21,3 +21,5 @@ Route::get('/test', function(){
 
 Route::any('signup', 'SignupController@anyIndex');
 Route::any('login', 'SignupController@anyLogin');
+
+Route::any('lottery', 'LotteryController@anyDraw');

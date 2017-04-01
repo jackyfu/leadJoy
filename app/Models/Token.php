@@ -8,7 +8,8 @@ class Token extends Model
 {
 
     protected $casts = [
-        'id'            =>'integer',
+        'id'            => 'integer',
+        'user_id'       => 'integer',
         'dev_id'        => 'string',
         'token'         => 'string',
         'client_type'   => 'string',
@@ -23,4 +24,9 @@ class Token extends Model
 
     protected $hidden = ['token'];
     //
+
+
+    public function getRouteKey(){
+        return $this->user_id;
+    }
 }
