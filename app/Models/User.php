@@ -31,16 +31,13 @@ class User extends Model
 {
     const GENDERS   =   ['m', 'f','x'];   // m：男， f：女， x：未知
 
-
     const AGE       =   0;                // 默认年龄
-
 
     const STAUTS    =   1;                // 账号状态
 
+    const level     =   [1=>'', 2=>'幼苗',3=>'小树', 4=>'大树', 5=>'两棵树',6=>'树林',7=>'森林',8=>'大才'];
 
-    const level     =   [1=>'种子', 2=>'幼苗',3=>'小树', 4=>'大树', 5=>'独木',6=>'树林',7=>'森林',8=>'大才'];
-
-    protected $table    =   'user';
+    protected $table    =   'account';
 
     protected $appends  =   ['error'];
 
@@ -128,7 +125,7 @@ class User extends Model
      */
     protected static function loginByMobile(array $auth) {
 
-        return self::etByMobile($auth['mobile']);
+        return self::getByMobile($auth['mobile']);
     }
 
     /**
@@ -190,6 +187,16 @@ class User extends Model
      * @param string $username
      * @return User
      */
+    public static function checkMobile(string $mobile) {
+        return self::query()->where('mobile', $mobile)->first();
+    }
+
+    /**
+     * 通过用户名查找账号
+     *
+     * @param string $username
+     * @return User
+     */
     public static function checkUsername(string $username) {
         $username = strtolower($username);
         if(strlen($username)<6 || strlen($username)>20){
@@ -212,6 +219,11 @@ class User extends Model
 
     public function getErrorAttribute(){
         return $this->attributes['error'] = 0;
+    }
+
+    //路由绑定 自定查询字段，与路由匹配
+    public function getRouteKeyName(){
+        return 'user_id';
     }
 
 }

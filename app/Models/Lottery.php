@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
  * Description of Column
  *
  *
- * @property int $id      ID
- * @property string $cookie  
- * @property string $mobile    用户手机号
+ * @property int      $id      ID
+ * @property string   $cookie
+ * @property string   $mobile    用户手机号
  * @property integer  $gift_id   
- * @property int $status       -1 封禁，0禁做主播，1 正常状态
+ * @property int      $status       0 未领取，1 已领取
  * @property datetime $created_at
  * @property datetime $updated_at
  */
@@ -27,7 +27,7 @@ class Lottery extends Model
 
     protected $cast = [
         "id"   => 'integer',
-	"cookie"	=> 'string',
+	    "cookie"	=> 'string',
         "mobile"    => 'string',
         "gift_id"   => 'integer',
         "status"    => 'integer',
@@ -35,13 +35,20 @@ class Lottery extends Model
         "updated_at"=> 'datetime'
     ];
 
+    /**
+     * @var integer
+     */
     protected $primaryKey = 'id';
 
 
-
+    /**
+     * @var array
+     */
     protected $dates = ['created_at', 'updated_at'];
 
-
+    /**
+     * @var array
+     */
     protected $guarded = [];
 
     public function genCookie(): self

@@ -182,7 +182,7 @@ return [
          * Custom Providers
          */
         Spatie\Backup\BackupServiceProvider::class, // add by fuqiwei at 2017-02-21
-
+        Prettus\Repository\Providers\RepositoryServiceProvider::class, // add by fuqiwei at 2017-04-18
     ],
 
     /*

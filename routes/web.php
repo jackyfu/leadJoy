@@ -20,6 +20,13 @@ Route::get('/test', function(){
 });
 
 Route::any('signup', 'SignupController@anyIndex');
+Route::post('resetpwd', 'SignupController@resetPwd');
+
 Route::any('login', 'SignupController@anyLogin');
+//Route::post('login', 'SignupController@postLogin');
 
 Route::any('lottery', 'LotteryController@anyDraw');
+
+Route::get('bindmodel/{user}', function(App\Models\User $user){
+    return $user->username;
+});

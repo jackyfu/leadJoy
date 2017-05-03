@@ -1,5 +1,13 @@
 var wxshare;
 var xbshare;
+window.alert = function(name){
+    var iframe = document.createElement("IFRAME");
+    iframe.style.display="none";
+    iframe.setAttribute("src", 'data:text/plain,');
+    document.documentElement.appendChild(iframe);
+    window.frames[0].window.alert(name);
+    iframe.parentNode.removeChild(iframe);
+};
 
 //分享
 function sendInfoToJava(messagetype){
@@ -133,13 +141,12 @@ $(function(){
                    var lotterynum = parseInt(data.num);//最新中奖次数
                    $("#num").text(lotterynum);//写到网页上去
                    var result = parseInt(data.gift_id);//中奖序号
+                   $("#num").text(numVal-1);
                     if(isNaN(result)){
                         result = -1000;
                         alert('没有抽奖机会了！');
                         return '';
                     }
-
-					$("#num").text(numVal-1);
                     switch(result){
                         case 110:
                             rotateFunc(0,10,'');//100元话费

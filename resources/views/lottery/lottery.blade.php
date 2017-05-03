@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>幸运大奖涂出来</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -18,7 +18,7 @@
 <body>
 	<!-- 转盘区域 -->
 	<div class="lottery">		
-        <p class="jihui" style="display:none1">你有<span id="num">1 </span>次抽奖机会</p>
+        <p class="jihui" style="display:none1">你有<span id="num">{{$num}} </span>次抽奖机会</p>
 		<div class="choujiang">
 	        <img src="/assets/lottery/images/zhuanpan.png">
 	            <!--转盘开始-->

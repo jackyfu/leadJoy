@@ -15,4 +15,4 @@ Homestead.yaml
 /.env.example
 /.gitattributes
 *.md
-tasks.md
+docs/tasks.md

@@ -32,6 +32,8 @@ class LotteryController extends Controller
     public function anyDraw(){
         $setCookie  = false;
         $ifRate     = 0; //0 未抽奖  1 已抽奖
+        $data       = ['num'=>1];
+
         if(!Cookie::get(self::LOTTERY_KEY)){
              $setCookie=true;
              $lottery_key = Cookie::make(self::LOTTERY_KEY, md5(microtime() . str_shuffle(uniqid())), 1440);
@@ -40,6 +42,8 @@ class LotteryController extends Controller
             $cookie_id   = Cookie::get(self::LOTTERY_KEY);
             $ifRate      = Cookie::get("ifRate");
         }
+        $data['num'] = $ifRate ? 0:1;
+
 
         if($this->request->ajax){
            $res = $this->rate($setCookie, $ifRate, $cookie_id);
@@ -49,9 +53,6 @@ class LotteryController extends Controller
         if($this->request->mobile){
             return response()->Json($this->updateMobile());
         }
-
-        //var_dump($setCookie,$_COOKIE, Cookie::get('status'));
-        $data = [];
 
         return !$setCookie
                 ? Response(view('lottery.lottery',$data))
@@ -83,16 +84,26 @@ class LotteryController extends Controller
         $giftOn = 0;
         $ids    = [2,5];
         $today  = date("Y-m-d", time());
-        $hasGiftToday = \App\Models\Lottery::whereRaw("gift_id=8 and substring(created_at,1,10)='{$today}'")->first();
+        $hasGiftToday = \App\Models\Lottery::whereRaw("gift_id=8 and substring(created_at,1,10)='{$today}'")->get();
 
-        (!$hasGiftToday  && (int)date("H",time())==11) &&   $giftOn = 1;
+        (!count($hasGiftToday)  && (int)date("H",time())==15) &&   $giftOn = 1;
         return $giftOn ? 8 : $ids[array_rand([2,5])];
     }
 
-    private function updateMobile(){
-        $res = ['error'=>1,'msg'=>'请填写正确的手机号，不可以重复领奖！'];
-        $user = \App\Models\Lottery::where('status',0)->where("cookie", Cookie::get(self::LOTTERY_KEY))->first();
-        if(preg_match("/^[1][345789]{1}[0-9]{9}$/",$this->request->mobile) &&$user){
+    private function updateMobile()
+    {
+        $res = ['error' => 1, 'msg' => '请填写正确的手机号，不可以重复领奖！'];
+        if(!preg_match("/^[1][345789]{1}[0-9]{9}$/", $this->request->mobile)){
+            return ['error' => 1, 'msg' => '手机号不正确！'];
+        }
+
+        $hasMobile = \App\Models\Lottery::where("mobile", (int)$this->request->mobile)->first();
+        if($hasMobile){
+             return ['error' => 1, 'msg' => '该手机号已经领取过奖励，换一个吧 亲！'];
+        }
+
+        $user = \App\Models\Lottery::where('status', 0)->where("cookie", Cookie::get(self::LOTTERY_KEY))->first();
+        if($user){
             $user->mobile = $this->request->mobile;
             $user->status = 1;
             $user->save();

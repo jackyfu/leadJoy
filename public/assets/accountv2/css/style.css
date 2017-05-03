@@ -1,0 +1,65 @@
+@charset "utf-8";
+.back{width:15x;height:15px;}
+body{
+	text-align: center;
+	width: 100%;
+}
+.head{text-align:center; margin-top:50px;}
+.logo{width:30%;height:30%;}
+.input{ margin:30px 15px 15px 15px;}
+.txt{height:40px; vertical-align:text-top; font-weight:bold; margin-top:30px;}
+.txt1{ float:left; margin-left:20px; color:#F90}
+.txt2{ float:right; margin-right:20px; color:#F90}
+.line{height:40px; margin:auto; margin-top:30px;font-weight: bold;}
+ul{padding:0;text-align:center; margin-bottom:20px;}
+li{list-style:none;display:inline-block;margin:0 20px;}
+a{text-decoration:none; color:#F90;}
+.back{width:15x;height:15px;}
+.statement{text-indent:35px; text-align:left; margin:70px 10px 10px 10px}
+#select{margin-top:50px;}
+.input{ margin-left:15px; margin-right:15px;}
+a{color:#F90;}
+.input_txt{width:70px;}
+.title{text-align:center; color:rgba(204,204,255,1);}
+.frame{padding:15px;}
+.footer {
+	color: #666666;
+	font-weight: bold;
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	text-align:center;
+}
+#top{ position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:1;}
+	.title{text-align:center; color:rgba(204,204,255,1);}
+.frame{padding:15px;}
+.retrieveFailed{display:none; text-align:center; margin-top:70px;}
+.baby_name,.baby_sex,.baby_parents,.baby_birth{font:35px;color:rgba(204,204,204,1);}
+.pic_logo{text-align:center; margin-top:40px;}
+.pic{width:30%;height:30%;}
+.submit_btn{margin-top:20%;}
+.select{
+		margin:10px;
+	}
+.user-ui-btn{margin:40px 0 20px 0;}
+.setting_text{
+	color: rgba(0,0,0,1) !important;
+	height:30px !important;
+	text-height:25px !important;
+	font-size:25px !important;
+	text-align:left !important;
+	border:1px solid rgba(236,236,236,1)!important;
+}
+.time_control{
+		margin-top:35px;
+	}
+.quit_bx{
+		display:none;
+	}
+.login_bx{
+		display:block;
+	}

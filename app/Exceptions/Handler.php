@@ -49,6 +49,14 @@ class Handler extends ExceptionHandler
 
         $messages   =   trans('errors');
         $code       =   $exception->getCode();
+
+        //echo get_class($exception);exit;  //token 验证失败
+        if($exception instanceof AuthenticationException ){
+            if ($exception->getMessage() == 'Unauthenticated.'){
+                $code = '55555';
+            }
+        }
+
         $message    =   isset($messages[$code])? $messages[$code] : $exception->getMessage();
 
         return response()->json(["error"=>$code,"message"=>$message], 200, $header, JSON_UNESCAPED_UNICODE);
